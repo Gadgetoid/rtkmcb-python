@@ -12,6 +12,10 @@ GPIO.setwarnings(False)
 
 M1_A = 17
 M1_B = 18
+
+M2_A = 22
+M2_B = 23
+
 BASE_FREQ = 5000
 
 class Motor():
@@ -62,16 +66,42 @@ class Motor():
 
 class MCB():
 	def __init__(self):
-		self.left  = Motor(17, 18)
-		self.right = Motor(22, 23)
+		self.motor_left  = Motor(M1_A, M1_B)
+		self.motor_right = Motor(M2_A, M2_B)
 
-	def speed(self, speed):
-		self.left.speed(speed)
-		self.right.speed(speed)
+	def speed(self, speed_left, speed_right = None):
+		if speed_right == None:
+			speed_right = speed_left
+		self.motor_left.speed(speed_left)
+		self.motor_right.speed(speed_right)
 
 	def stop(self):
-		self.left.stop()
-		self.right.stop()
+		self.motor_left.stop()
+		self.motor_right.stop()
+	
+	def left(self, speed):
+		if( speed < 0 ):
+			return False
+		self.motor_right.speed(speed)
+		self.motor_left.speed(-speed)
+
+	def right(self, speed):
+		if( speed < 0 ):
+			return False
+		self.motor_right.speed(-speed)
+		self.motor_left.speed(speed)
+
+	def turn(self, speed):
+		self.motor_right.speed(-speed)
+		self.motor_left.speed(speed)
+
+	def forwards(self, speed):
+		self.motor_left.forwards(speed)
+		self.motor_right.forwards(speed)
+
+	def backwards(self, speed):
+		self.motor_left.backwards(speed)
+		self.motor_right.backwards(speed)
 	
 mcb = MCB()
 

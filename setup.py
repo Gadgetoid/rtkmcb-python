@@ -33,7 +33,7 @@ classifiers = ['Development Status :: 3 - Alpha',
                'Topic :: System :: Hardware']
 
 setup(name		= 'Rtkmcb',
-	version		= '0.0.1dev',
+	version		= '0.0.2dev',
 	author		= 'Philip Howard',
 	author_email	= 'phil@gadgetoid.com',
 	description	= 'A module to control the Ryanteck Motor Driver Board',
