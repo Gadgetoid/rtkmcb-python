@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+0.0.4-dev
+---------
+- Fixed bugs introduced by Kanux PWM performance
+- Attempt to fix bug in PWM frequency persistence
+
 0.0.1-dev
--------
+---------
 - Initial development/alpha release
