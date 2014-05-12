@@ -22,7 +22,7 @@ SOFTWARE.
 
 from distutils.core import setup
 
-classifiers = ['Development Status :: 3 - Alpha',
+classifiers = ['Development Status :: 4 - Beta',
                'Operating System :: POSIX :: Linux',
                'License :: OSI Approved :: MIT License',
                'Intended Audience :: Developers',
@@ -33,7 +33,7 @@ classifiers = ['Development Status :: 3 - Alpha',
                'Topic :: System :: Hardware']
 
 setup(name		= 'Rtkmcb',
-	version		= '0.0.2dev',
+	version		= '0.0.4dev',
 	author		= 'Philip Howard',
 	author_email	= 'phil@gadgetoid.com',
 	description	= 'A module to control the Ryanteck Motor Driver Board',

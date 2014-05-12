@@ -37,7 +37,7 @@ class Motor():
 			time.sleep(0.02)
 			GPIO.output(self.pin_forward, 1)
 		else:
-			self.pwm_forward.ChangeFrequency( BASE_FREQ )
+			self.pwm_forward.ChangeFrequency(BASE_FREQ)
 			self.pwm_forward.start(speed)
 
 	def backwards(self, speed):
@@ -49,7 +49,7 @@ class Motor():
 			time.sleep(0.02)
 			GPIO.output(self.pin_backward, 1)
 		else:
-			self.pwm_backward.ChangeFrequency( BASE_FREQ )
+			self.pwm_backward.ChangeFrequency(BASE_FREQ)
 			self.pwm_backward.start(speed)
 
 	def stop(self):
