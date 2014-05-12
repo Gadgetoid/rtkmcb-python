@@ -16,7 +16,7 @@ M1_B = 18
 M2_A = 22
 M2_B = 23
 
-BASE_FREQ = 5000
+BASE_FREQ = 12800
 
 class Motor():
 
@@ -37,6 +37,7 @@ class Motor():
 			time.sleep(0.02)
 			GPIO.output(self.pin_forward, 1)
 		else:
+			self.pwm_forward.ChangeFrequency( BASE_FREQ )
 			self.pwm_forward.start(speed)
 
 	def backwards(self, speed):
@@ -48,6 +49,7 @@ class Motor():
 			time.sleep(0.02)
 			GPIO.output(self.pin_backward, 1)
 		else:
+			self.pwm_backward.ChangeFrequency( BASE_FREQ )
 			self.pwm_backward.start(speed)
 
 	def stop(self):
